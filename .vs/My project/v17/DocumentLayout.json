@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jamie\\My project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jamie\\my project\\assets\\scripts\\shoot ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shoot ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|c:\\users\\jamie\\my project\\assets\\scripts\\playercamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercamera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jamie\\My project\\assets\\scripts\\netsoftbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\netsoftbody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|C:\\Users\\jamie\\My project\\assets\\scripts\\scored.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scored.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerCamera.cs",
+              "DocumentMoniker": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\PlayerCamera.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerCamera.cs",
+              "ToolTip": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\PlayerCamera.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerCamera.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T00:25:03.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Scored.cs",
+              "DocumentMoniker": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\Scored.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Scored.cs",
+              "ToolTip": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\Scored.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Scored.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T23:30:14.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NetSoftBody.cs",
+              "DocumentMoniker": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\NetSoftBody.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NetSoftBody.cs",
+              "ToolTip": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\NetSoftBody.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NetSoftBody.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T22:16:49.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Shoot Ball.cs",
+              "DocumentMoniker": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\Shoot Ball.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Shoot Ball.cs",
+              "ToolTip": "C:\\Users\\jamie\\My project\\Assets\\Scripts\\Shoot Ball.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Shoot Ball.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T22:09:54.654Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
