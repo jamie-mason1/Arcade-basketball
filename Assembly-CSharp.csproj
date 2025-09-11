@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{32C3BDE6-E125-3128-82C1-25D0441455A3}</ProjectGuid>
+    <ProjectGuid>{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,6 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\NetSoftBody.cs" />
     <Compile Include="Assets\Scripts\Shoot Ball.cs" />
+    <Compile Include="Assets\Scripts\DestroyBall.cs" />
+    <Compile Include="Assets\Scripts\SpawnBallLocation.cs" />
+    <Compile Include="Assets\Scripts\RepeatForInstatiation.cs" />
     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
     <Compile Include="Assets\Scripts\Scored.cs" />
   </ItemGroup>

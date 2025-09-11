@@ -25,13 +25,15 @@ public class ShootBall : MonoBehaviour
 
     Camera cam;
 
+    public RepeatForInstatiation copyBall;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         isReadyToShoot = true;
         cam = Camera.main;
-        referenceHeight = hoopPosition.position.y - transform.position.y;
+        referenceHeight = hoopPosition.position.y - copyBall.orginalReferenceHeight;
         maxPower = CalculateMaxPower(referenceDistance * 2f, referenceHeight, arcAngleDegrees);
         // Compute maxPower to reach ~2x reference distance
 
@@ -60,7 +62,6 @@ public class ShootBall : MonoBehaviour
         Quaternion arcRotation = Quaternion.AngleAxis(arcAngleDegrees, -cam.transform.right);
 
         Vector3 launchDir = arcRotation * dir;
-        Debug.Log(launchDir);
         float speed = chargeT * maxPower;
 
         return launchDir * speed;
@@ -85,12 +86,20 @@ public class ShootBall : MonoBehaviour
             {
                 rb.isKinematic = false;
                 Vector3 launchVelocity = CalculateLaunchVelocity();
+                Debug.Log(launchVelocity);
                 rb.AddForce(launchVelocity * rb.mass, ForceMode.Impulse);
 
                 isReadyToShoot = false;
                 chargeT = 0f;
+                if (copyBall.CanStartInstatiation == false)
+                {
+                    copyBall.CanStartInstatiation = true;
+                }
             }
+            
         }
+       
+        
         
     }
 }
