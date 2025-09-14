@@ -1,6 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class RepeatForInstatiation : MonoBehaviour
 {
@@ -11,6 +13,10 @@ public class RepeatForInstatiation : MonoBehaviour
     float timetoinstatiation = 0.66f;
     public Transform ballSpawnPoint;
     public float orginalReferenceHeight;
+    [SerializeField] Image powerBar;
+
+
+    public float startFillAmount; 
 
     private void Awake()
     {
@@ -20,6 +26,7 @@ public class RepeatForInstatiation : MonoBehaviour
 
     private void Start()
     {
+        powerBar.fillAmount = 0f;
         Instantiate(OriginalBall);
         OriginalBall.SetActive(false);
     }
@@ -31,6 +38,9 @@ public class RepeatForInstatiation : MonoBehaviour
             if(currentTime < timetoinstatiation)
             {
                 currentTime += Time.deltaTime;
+                float t = currentTime / timetoinstatiation; // goes 0 → 1
+                powerBar.fillAmount = Mathf.Lerp(startFillAmount, 0f, t);
+
             }
             else
             {
@@ -40,7 +50,14 @@ public class RepeatForInstatiation : MonoBehaviour
                 BallCopy.SetActive(true);
                 CanStartInstatiation = false;
                 currentTime = 0f;
+                powerBar.fillAmount = 0f;
+
             }
         }
+    }
+    public void SetPowerBarAmount(float charge)
+    {
+        charge = Mathf.Clamp01(charge);
+        powerBar.fillAmount = charge;
     }
 }

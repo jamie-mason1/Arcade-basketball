@@ -80,15 +80,15 @@ public class ShootBall : MonoBehaviour
             {
                 chargeT += Time.deltaTime * chargeSpeed;
                 chargeT = Mathf.Clamp01(chargeT);
+                copyBall.SetPowerBarAmount(chargeT);
             }
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 rb.isKinematic = false;
                 Vector3 launchVelocity = CalculateLaunchVelocity();
-                Debug.Log(launchVelocity);
                 rb.AddForce(launchVelocity * rb.mass, ForceMode.Impulse);
-
+                copyBall.startFillAmount = chargeT;
                 isReadyToShoot = false;
                 chargeT = 0f;
                 if (copyBall.CanStartInstatiation == false)
