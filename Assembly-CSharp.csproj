@@ -61,11 +61,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NetSoftBody.cs" />
+    <Compile Include="Assets\Scripts\RimSound.cs" />
     <Compile Include="Assets\Scripts\Shoot Ball.cs" />
     <Compile Include="Assets\Scripts\DestroyBall.cs" />
     <Compile Include="Assets\Scripts\SpawnBallLocation.cs" />
     <Compile Include="Assets\Scripts\RepeatForInstatiation.cs" />
     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
+    <Compile Include="Assets\Scripts\BackboardSound.cs" />
     <Compile Include="Assets\Scripts\Scored.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -22,6 +22,8 @@ public class ShootBall : MonoBehaviour
     private float chargeT = 0f;
     public float chargeSpeed = 1f;
     float gravity = Mathf.Abs(Physics.gravity.y);
+    [SerializeField] private AudioSource charging;
+    [SerializeField] private AudioSource shot;
 
     Camera cam;
 
@@ -81,14 +83,17 @@ public class ShootBall : MonoBehaviour
                 chargeT += Time.deltaTime * chargeSpeed;
                 chargeT = Mathf.Clamp01(chargeT);
                 copyBall.SetPowerBarAmount(chargeT);
+                charging.Play();
             }
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
+                charging.Stop();
                 rb.isKinematic = false;
                 Vector3 launchVelocity = CalculateLaunchVelocity();
                 rb.AddForce(launchVelocity * rb.mass, ForceMode.Impulse);
                 copyBall.startFillAmount = chargeT;
+                shot.Play();
                 isReadyToShoot = false;
                 chargeT = 0f;
                 if (copyBall.CanStartInstatiation == false)
