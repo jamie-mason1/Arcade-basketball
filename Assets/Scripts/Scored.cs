@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Scored : MonoBehaviour
 {
+    AudioSource ding;
+    private void Awake()
+    {
+        ding = GameObject.Find("Ding").GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         
@@ -11,7 +16,7 @@ public class Scored : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("Scored");
+               ding.Play();
             }
         }
     }
