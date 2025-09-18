@@ -25,19 +25,19 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 22b005a14a0c79243a9f79af17fe310a, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 10, y: 3}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
         m_Texture: {fileID: 2800000, guid: 6d78f5ade57898d4781a8b94be34ad9e, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 10, y: 3}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: f8aee48273c4d4a47ab7c21cfee17061, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 10, y: 3}
         m_Offset: {x: 0, y: 0}
     - _RoughnessMap:
         m_Texture: {fileID: 2800000, guid: c9f813675574c9c4d9c4d66b0e956748, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 10, y: 3}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
