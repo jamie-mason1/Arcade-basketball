@@ -19,16 +19,20 @@ public class ShootBall : MonoBehaviour
     [SerializeField] float arcAngleDegrees = 45f;
     [SerializeField] float maxPower; // calculated in Start
 
+    [SerializeField] private float shotVelolcityMultiplier;
     private float chargeT = 0f;
     public float chargeSpeed = 1f;
     float gravity = Mathf.Abs(Physics.gravity.y);
     [SerializeField] private AudioSource charging;
     [SerializeField] private AudioSource shot;
-
+    SphereCollider col;
     Camera cam;
+    public bool hasScored;
+    public bool hasBeenCounted;
+    [SerializeField] public Scored scored;
 
     public RepeatForInstatiation copyBall;
-
+    float originalVel;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,7 +42,9 @@ public class ShootBall : MonoBehaviour
         referenceHeight = hoopPosition.position.y - copyBall.orginalReferenceHeight;
         maxPower = CalculateMaxPower(referenceDistance * 2f, referenceHeight, arcAngleDegrees);
         // Compute maxPower to reach ~2x reference distance
-
+        originalVel = 0;
+        col = GetComponent<SphereCollider>();
+        col.enabled = false;
     }
 
     float CalculateMaxPower(float distance, float height, float angleDegrees)
@@ -89,9 +95,11 @@ public class ShootBall : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 charging.Stop();
+                copyBall.ballsShotOrder.Add(gameObject);
                 rb.isKinematic = false;
                 Vector3 launchVelocity = CalculateLaunchVelocity();
                 rb.AddForce(launchVelocity * rb.mass, ForceMode.Impulse);
+                StartCoroutine(EnableCollider(col, 2f));
                 copyBall.startFillAmount = chargeT;
                 shot.Play();
                 isReadyToShoot = false;
@@ -99,12 +107,27 @@ public class ShootBall : MonoBehaviour
                 if (copyBall.CanStartInstatiation == false)
                 {
                     copyBall.CanStartInstatiation = true;
+                    copyBall.shots++;
                 }
             }
             
         }
-       
         
-        
+    }
+    private System.Collections.IEnumerator EnableCollider(SphereCollider col, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (col != null) // check in case it was destroyed earlier
+        {
+            col.enabled = true;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == scored.gameObject)
+        {
+            hasScored = true;
+        }
     }
 }
