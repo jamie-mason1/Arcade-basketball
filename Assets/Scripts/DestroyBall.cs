@@ -10,25 +10,28 @@ public class DestroyBall : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            
             shoot = other.GetComponent<ShootBall>();
-            GameObject lastBall = shoot.copyBall.ballsShotOrder[shoot.copyBall.ballsShotOrder.Count - 1];
-
-            // Only check scoring for the last ball
-            if (other.gameObject == lastBall)
+            if (shoot != null)
             {
-                if (shoot.hasScored)
+                GameObject lastBall = shoot.copyBall.ballsShotOrder[shoot.copyBall.ballsShotOrder.Count - 1];
+
+                // Only check scoring for the last ball
+                if (other.gameObject == lastBall)
                 {
-                    if (shoot.hasBeenCounted == false) { 
-                        shoot.scored.scoreStreak++;
-                        shoot.hasBeenCounted = true;
+                    if (shoot.hasScored)
+                    {
+                        if (shoot.hasBeenCounted == false)
+                        {
+                            shoot.hasBeenCounted = true;
+                        }
+                    }
+                    else
+                    {
                     }
                 }
-                else
-                {
-                    shoot.scored.scoreStreak = 0;
-                }
+                StartCoroutine(DestroyAfterDelay(other.gameObject, 20f));
             }
-            StartCoroutine(DestroyAfterDelay(other.gameObject, 20f));
 
         }
     }

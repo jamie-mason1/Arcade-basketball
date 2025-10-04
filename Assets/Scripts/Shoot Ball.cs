@@ -11,6 +11,15 @@ public class ShootBall : MonoBehaviour
     float referenceDistance = 116.5373f; // horizontal distance to hoop for calibration
     [SerializeField] float referenceHeight = 3.05f; // hoop height - ball start height
 
+    [SerializeField] private float squashAmount = 0f; // how much to squash
+    [SerializeField] private float squashDuration = 0.2f; // how fast to squash
+    [SerializeField] private float stretchDuration = 0.2f; // how fast to squash
+    [SerializeField] private float stretchAmount = 0; // stretch after bounce
+
+    private Vector3 originalScale;
+    private bool isSquashing = false;
+
+
     [Header("Ball Hold Settings")]
     [SerializeField] Transform holdPoint;
     [SerializeField] float maxChargeOffset = 5f;
@@ -19,6 +28,8 @@ public class ShootBall : MonoBehaviour
     [SerializeField] float arcAngleDegrees = 45f;
     [SerializeField] float maxPower; // calculated in Start
 
+
+    [SerializeField] GameObject ChildMesh;
     [SerializeField] private float shotVelolcityMultiplier;
     private float chargeT = 0f;
     public float chargeSpeed = 1f;
@@ -29,7 +40,6 @@ public class ShootBall : MonoBehaviour
     Camera cam;
     public bool hasScored;
     public bool hasBeenCounted;
-    [SerializeField] public Scored scored;
 
     public RepeatForInstatiation copyBall;
     float originalVel;
@@ -45,6 +55,7 @@ public class ShootBall : MonoBehaviour
         originalVel = 0;
         col = GetComponent<SphereCollider>();
         col.enabled = false;
+        originalScale = ChildMesh.transform.localScale;
     }
 
     float CalculateMaxPower(float distance, float height, float angleDegrees)
@@ -123,11 +134,77 @@ public class ShootBall : MonoBehaviour
             col.enabled = true;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    
+
+    
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject == scored.gameObject)
+        if (!isSquashing)
         {
-            hasScored = true;
+            // Run squash/stretch animation
+            StartCoroutine(SquashEffect(collision.relativeVelocity.magnitude));
         }
     }
+
+
+    private IEnumerator SquashEffect(float impactForce)
+    {
+        isSquashing = true;
+
+        // Optional: use impact force to scale intensity
+        float squashIntensity = Mathf.Clamp(impactForce / 10f, 0.8f, 1.5f);
+
+        // Step 1: Squash
+        Vector3 squashedScale = new Vector3(
+            originalScale.x * (1 + squashAmount * squashIntensity),
+            originalScale.y * (1 - squashAmount * squashIntensity),
+            originalScale.z * (1 + squashAmount * squashIntensity)
+        );
+
+        float elapsed = 0f;
+        while (elapsed < squashDuration)
+        {
+            ChildMesh.transform.localScale = Vector3.Lerp(originalScale, originalScale, elapsed / squashDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Step 2: Stretch (after bounce)
+        Vector3 stretchedScale = new Vector3(
+            originalScale.x * (1 - squashAmount * 0.5f),
+            originalScale.y * (1 + stretchAmount * squashIntensity),
+            originalScale.z * (1 - squashAmount * 0.5f)
+        );
+
+        elapsed = 0f;
+        while (elapsed < squashDuration)
+        {
+            ChildMesh.transform.localScale = Vector3.Lerp(originalScale, squashedScale, elapsed / squashDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Step 3: Return to normal
+        elapsed = 0f;
+        while (elapsed < stretchDuration)
+        {
+            ChildMesh.transform.localScale = Vector3.Lerp(squashedScale, stretchedScale, elapsed / squashDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        ChildMesh.transform.localScale = originalScale;
+        
+        isSquashing = false;
+    }
 }
+
+
+
+
+
+
+
+
+
+

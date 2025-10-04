@@ -8,8 +8,6 @@ public class Scored : MonoBehaviour
     AudioSource ding;
     [SerializeField] ParticleSystem confetti;
     [SerializeField] private TextMeshProUGUI scoreVal;
-    [SerializeField] private TextMeshProUGUI streakVal;
-    public int scoreStreak = 0;
     int score;
     private void Awake()
     {
@@ -19,7 +17,6 @@ public class Scored : MonoBehaviour
     private void Start()
     {
         scoreVal.text = "Score: " + score.ToString();
-        streakVal.text = "Current Streak: " + scoreStreak.ToString();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -41,7 +38,6 @@ public class Scored : MonoBehaviour
     }
     private void Update()
     {
-        streakVal.text = "Current Streak: " + scoreStreak.ToString();
 
     }
 
