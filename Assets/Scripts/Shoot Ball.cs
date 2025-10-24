@@ -5,6 +5,11 @@ using UnityEngine;
 public class ShootBall : MonoBehaviour
 {
     Rigidbody rb;
+    Material mat;
+    private Color originalAlbedo;
+    public Color targetColor = Color.red;
+
+
     bool isReadyToShoot;
     [SerializeField]Transform hoopPosition;
     [Header("Reference Settings")]
@@ -16,6 +21,8 @@ public class ShootBall : MonoBehaviour
     [SerializeField] private float stretchDuration = 0.2f; // how fast to squash
     [SerializeField] private float stretchAmount = 0; // stretch after bounce
 
+    public ParticleSystem shotEffect;
+    public ParticleSystem shotEffect2;
     private Vector3 originalScale;
     private bool isSquashing = false;
 
@@ -45,6 +52,27 @@ public class ShootBall : MonoBehaviour
     float originalVel;
     void Start()
     {
+        if (ChildMesh == null)
+        {
+            // Get the first Renderer in children
+            Renderer childRenderer = GetComponentInChildren<Renderer>();
+            if (childRenderer != null)
+            {
+                ChildMesh = childRenderer.gameObject;
+            }
+            else
+            {
+                Debug.LogError("ShootBall: No child mesh with Renderer found!");
+            }
+        }
+
+        Renderer rend = ChildMesh.GetComponent<Renderer>();
+
+        // Create a unique material instance for this ball
+        mat = new Material(rend.material);
+        rend.material = mat;  // Assign it back to the Renderer
+
+        originalAlbedo = mat.color;
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         isReadyToShoot = true;
@@ -101,6 +129,16 @@ public class ShootBall : MonoBehaviour
                 chargeT = Mathf.Clamp01(chargeT);
                 copyBall.SetPowerBarAmount(chargeT);
                 charging.Play();
+                shotEffect.transform.position = copyBall.ballSpawnPoint.position;
+                shotEffect2.transform.position = copyBall.ballSpawnPoint.position;
+                shotEffect.transform.position = copyBall.ballSpawnPoint.position + Vector3.up;
+                shotEffect2.transform.position = copyBall.ballSpawnPoint.position + Vector3.up;
+                mat.color = Color.Lerp(originalAlbedo, targetColor, chargeT);
+                if (chargeT >= 1f)
+                {
+                    StartCoroutine(VibrateBall(0.8f, 0.0010f, 40f));
+                }
+
             }
 
             if (Input.GetKeyUp(KeyCode.Space))
@@ -120,8 +158,12 @@ public class ShootBall : MonoBehaviour
                     copyBall.CanStartInstatiation = true;
                     copyBall.shots++;
                 }
+                shotEffect.Play();
+                shotEffect2.Play();
+                mat.color = originalAlbedo;
+
             }
-            
+
         }
         
     }
@@ -196,6 +238,26 @@ public class ShootBall : MonoBehaviour
         ChildMesh.transform.localScale = originalScale;
         
         isSquashing = false;
+    }
+    private IEnumerator VibrateBall(float duration = 0.2f, float intensity = 0.1f, float frequency = 30f)
+    {
+        Vector3 originalPos = ChildMesh.transform.localPosition; // store original position
+        float elapsed = 0f;
+        float interval = 1f / frequency;
+
+        while (elapsed < duration)
+        {
+            float offsetX = Random.Range(-intensity, intensity);
+            float offsetY = Random.Range(-intensity, intensity);
+            float offsetZ = Random.Range(-intensity, intensity);
+
+            ChildMesh.transform.localPosition = originalPos + new Vector3(offsetX, offsetY, offsetZ);
+
+            elapsed += interval;
+            yield return new WaitForSeconds(interval);
+        }
+
+        ChildMesh.transform.localPosition = originalPos; // reset to original
     }
 }
 

@@ -9,6 +9,7 @@ public class RepeatForInstatiation : MonoBehaviour
 {
 
     public GameObject OriginalBall;
+    public GameObject OriginalBallMesh;
     public bool CanStartInstatiation = false;
     float currentTime = 0f;
     float timetoinstatiation = 0.66f;
