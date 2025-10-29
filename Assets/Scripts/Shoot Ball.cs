@@ -23,7 +23,15 @@ public class ShootBall : MonoBehaviour
 
     public ParticleSystem smoke;
     public ParticleSystem ring;
-    private Vector3 originalScale;
+    public ParticleSystem EnergyAura;          // Reference to the aura particle system
+    [SerializeField] private float auraMaxSize = 1.5f;       // Maximum size multiplier
+    [SerializeField] private float auraMaxEmission = 50f;    // Maximum emission rate at full charge
+    [SerializeField] private float vibrationBoost = 0.5f;    // Extra boost during vibration
+    [SerializeField] private float vibrationRampTime = 5f;   // Time to reach max vibration boost
+
+    private float auraChargeMultiplier = 0f;
+    private float auraVibrationMultiplier = 0f;
+    private bool isAuraFading = false; private Vector3 originalScale;
     private bool isSquashing = false;
 
     float originalStartSizeSmoke;
@@ -144,6 +152,13 @@ public class ShootBall : MonoBehaviour
                         chargeT += Time.deltaTime * chargeSpeed;
                         chargeT = Mathf.Clamp01(chargeT);
                         copyBall.SetPowerBarAmount(chargeT);
+
+                        auraChargeMultiplier = chargeT; // set aura based on charge
+                        UpdateEnergyAura(auraChargeMultiplier, auraVibrationMultiplier);
+
+                        chargeT += Time.deltaTime * chargeSpeed;
+                        chargeT = Mathf.Clamp01(chargeT);
+                        copyBall.SetPowerBarAmount(chargeT);
                         charging.Play();
                         
                         smoke.transform.position = copyBall.ballSpawnPoint.position + Vector3.up;
@@ -213,6 +228,8 @@ public class ShootBall : MonoBehaviour
 
                     smoke.Play();
                     ring.Play();
+                    StartCoroutine(FadeOutEnergyAura(1.5f));
+
                 }
                 mat.color = originalAlbedo;
                 MustChargeAgain = false;
@@ -228,6 +245,32 @@ public class ShootBall : MonoBehaviour
         }
         
     }
+
+    private void UpdateEnergyAura(float chargeMultiplier, float vibrationMultiplier = 0f)
+    {
+        if (EnergyAura == null) return;
+
+        var main = EnergyAura.main;
+        var emission = EnergyAura.emission;
+
+        // Combine charge + vibration, clamp to 1.5
+        float totalMultiplier = Mathf.Clamp(chargeMultiplier + vibrationMultiplier, 0f, 1f + vibrationBoost);
+
+        // Scale size and emission
+        main.startSize = auraMaxSize * totalMultiplier;
+        emission.rateOverTime = auraMaxEmission * totalMultiplier;
+
+        // Optional: fade alpha as multiplier
+        main.startColor = new ParticleSystem.MinMaxGradient(new Color(1f, 1f, 1f, totalMultiplier));
+
+        // Play/stop depending on totalMultiplier
+        if (!EnergyAura.isPlaying && totalMultiplier > 0f)
+            EnergyAura.Play();
+        else if (totalMultiplier <= 0f && !isAuraFading)
+            EnergyAura.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+    }
+
+
     private System.Collections.IEnumerator EnableCollider(SphereCollider col, float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -268,7 +311,9 @@ public class ShootBall : MonoBehaviour
         isFullyCharged = false;
         vibrationStarted = false;
         timeAtFullCharge = 0f;
-        
+        StartCoroutine(FadeOutEnergyAura(1.5f));
+
+
     }
 
     private IEnumerator SquashEffect(float impactForce)
@@ -334,6 +379,9 @@ public class ShootBall : MonoBehaviour
 
             float interval = 1f / frequency;
             float elapsedPulse = 0f;
+            auraVibrationMultiplier = Mathf.Lerp(0f, vibrationBoost, vibrationElapsed / vibrationRampTime);
+
+            // Update aura with charge + vibration
 
             while (elapsedPulse < duration && isVibrating)
             {
@@ -347,6 +395,7 @@ public class ShootBall : MonoBehaviour
                 vibrationElapsed += interval;
                 yield return new WaitForSeconds(interval);
             }
+            UpdateEnergyAura(auraChargeMultiplier, auraVibrationMultiplier);
 
             ChildMesh.transform.localPosition = originalPos;
 
@@ -356,6 +405,30 @@ public class ShootBall : MonoBehaviour
             vibrationStarted = false;
 
     }
+
+    private IEnumerator FadeOutEnergyAura(float fadeDuration = 1f)
+    {
+        isAuraFading = true;
+
+        float elapsed = 0f;
+        float startCharge = auraChargeMultiplier + auraVibrationMultiplier;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Lerp(startCharge, 0f, elapsed / fadeDuration);
+
+            UpdateEnergyAura(t, 0f); // gradually reduce aura
+
+            yield return null;
+        }
+
+        auraChargeMultiplier = 0f;
+        auraVibrationMultiplier = 0f;
+        UpdateEnergyAura(0f, 0f);
+        isAuraFading = false;
+    }
+
 }
 
 

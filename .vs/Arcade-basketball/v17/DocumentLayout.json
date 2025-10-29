@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\jamie\\My project\\Arcade-basketball\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|C:\\Users\\jamie\\My project\\Arcade-basketball\\assets\\scripts\\shoot ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|c:\\users\\jamie\\my project\\arcade-basketball\\assets\\scripts\\shoot ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shoot ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|c:\\users\\jamie\\my project\\arcade-basketball\\assets\\shaders\\wallsshader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|C:\\Users\\jamie\\My project\\Arcade-basketball\\assets\\shaders\\wallsshader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|solutionrelative:assets\\shaders\\wallsshader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
@@ -76,7 +76,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Shoot Ball.cs",
               "ToolTip": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\Shoot Ball.cs",
               "RelativeToolTip": "Assets\\Scripts\\Shoot Ball.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAAAkwJcAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAgwNsAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-10T13:43:50.795Z",
               "IsPinned": true,
@@ -92,8 +92,7 @@
               "RelativeToolTip": "Assets\\Shaders\\WallsShader.shader",
               "ViewState": "AgIAAFMAAAAAAAAAAAAgwHwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-10-24T16:33:30.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-24T16:33:30.336Z"
             },
             {
               "$type": "Document",
