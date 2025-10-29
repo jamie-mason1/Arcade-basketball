@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638928002635947148
-    m_Hash: 363670892
+      ticks: 638969159995331061
+    m_Hash: 308386496
   m_LockFileStatus:
     m_FilePath: C:/Users/jamie/My project/Arcade-basketball/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638928002636056401
-    m_Hash: 2883593957
+      ticks: 638969159995401829
+    m_Hash: 1960709526
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -116,6 +116,7 @@ m_ResolvedPackages:
     - 2.10.2
     - 2.10.3
     - 2.10.4
+    - 2.10.5
     - 3.0.0-pre.3
     - 3.0.0-pre.4
     - 3.0.0-pre.5
@@ -129,6 +130,7 @@ m_ResolvedPackages:
     - 3.1.2
     - 3.1.3
     - 3.1.4
+    - 3.1.5
     compatible:
     - 2.9.5
     - 2.9.7
@@ -137,6 +139,7 @@ m_ResolvedPackages:
     - 2.10.2
     - 2.10.3
     - 2.10.4
+    - 2.10.5
     - 3.0.0-pre.3
     - 3.0.0-pre.4
     - 3.0.0-pre.5
@@ -150,6 +153,7 @@ m_ResolvedPackages:
     - 3.1.2
     - 3.1.3
     - 3.1.4
+    - 3.1.5
     recommended: 2.9.7
     deprecated: []
   dependencies:
@@ -317,6 +321,7 @@ m_ResolvedPackages:
     - 2.9.1
     - 2.9.2
     - 2.9.3
+    - 2.10.0
     compatible:
     - 2.3.1
     - 2.4.3
@@ -330,6 +335,7 @@ m_ResolvedPackages:
     - 2.9.1
     - 2.9.2
     - 2.9.3
+    - 2.10.0
     recommended: 2.3.1
     deprecated: []
   dependencies: []
@@ -462,6 +468,181 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.1
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.unity.shadergraph@14.0.10
+  testable: 0
+  isDirectDependency: 1
+  version: 14.0.10
+  source: 2
+  resolvedPath: C:\Users\jamie\My project\Arcade-basketball\Library\PackageCache\com.unity.shadergraph@14.0.10
+  assetPath: Packages/com.unity.shadergraph
+  name: com.unity.shadergraph
+  displayName: Shader Graph
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: The Shader Graph package adds a visual Shader editing tool to Unity.
+    You can use this tool to create Shaders in a visual way instead of writing code.
+    Specific render pipelines can implement specific graph features. Currently, both
+    the High Definition Rendering Pipeline and the Universal Rendering Pipeline support
+    Shader Graph.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.1.8
+    - 0.1.9
+    - 0.1.17
+    - 1.0.0-beta
+    - 1.1.1-preview
+    - 1.1.2-preview
+    - 1.1.3-preview
+    - 1.1.4-preview
+    - 1.1.5-preview
+    - 1.1.6-preview
+    - 1.1.8-preview
+    - 1.1.9-preview
+    - 2.0.1-preview
+    - 2.0.3-preview
+    - 2.0.4-preview
+    - 2.0.4-preview.1
+    - 2.0.5-preview
+    - 2.0.6-preview
+    - 2.0.7-preview
+    - 2.0.8-preview
+    - 3.0.0-preview
+    - 3.1.0-preview
+    - 3.3.0-preview
+    - 4.0.0-preview
+    - 4.0.1-preview
+    - 4.1.0-preview
+    - 4.2.0-preview
+    - 4.3.0-preview
+    - 4.6.0-preview
+    - 4.8.0-preview
+    - 4.9.0-preview
+    - 4.10.0-preview
+    - 5.0.0-preview
+    - 5.1.0
+    - 5.2.0
+    - 5.2.1
+    - 5.2.2
+    - 5.2.3
+    - 5.3.1
+    - 5.6.1
+    - 5.7.2
+    - 5.8.2
+    - 5.9.0
+    - 5.10.0
+    - 5.13.0
+    - 5.16.1
+    - 6.5.2
+    - 6.5.3
+    - 6.7.1
+    - 6.9.0
+    - 6.9.1
+    - 6.9.2
+    - 7.0.0
+    - 7.0.1
+    - 7.1.1
+    - 7.1.2
+    - 7.1.5
+    - 7.1.6
+    - 7.1.7
+    - 7.1.8
+    - 7.2.0
+    - 7.2.1
+    - 7.3.1
+    - 7.4.1
+    - 7.4.2
+    - 7.4.3
+    - 7.5.1
+    - 7.5.2
+    - 7.5.3
+    - 7.6.0
+    - 7.7.0
+    - 7.7.1
+    - 8.0.1
+    - 8.1.0
+    - 8.2.0
+    - 8.3.1
+    - 9.0.0-preview.14
+    - 9.0.0-preview.34
+    - 9.0.0-preview.55
+    - 9.0.0-preview.72
+    - 10.0.0-preview.27
+    - 10.1.0
+    - 10.2.0
+    - 10.2.1
+    - 10.2.2
+    - 10.3.1
+    - 10.3.2
+    - 10.4.0
+    - 10.5.0
+    - 10.5.1
+    - 10.6.0
+    - 10.7.0
+    - 10.8.0
+    - 10.8.1
+    - 10.9.0
+    - 10.10.0
+    - 10.10.1
+    - 14.0.10
+    compatible:
+    - 14.0.10
+    recommended: 14.0.10
+    deprecated: []
+  dependencies:
+  - name: com.unity.render-pipelines.core
+    version: 14.0.10
+  - name: com.unity.searcher
+    version: 4.9.2
+  resolvedDependencies:
+  - name: com.unity.render-pipelines.core
+    version: 14.0.10
+  - name: com.unity.ugui
+    version: 1.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  - name: com.unity.modules.terrain
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  - name: com.unity.searcher
+    version: 4.9.2
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 14.0.10
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -603,6 +784,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.11
     - 3.2.0-pre.12
     - 3.2.0-pre.13
+    - 3.2.0-pre.14
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -623,6 +805,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.11
     - 3.2.0-pre.12
     - 3.2.0-pre.13
+    - 3.2.0-pre.14
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.9
@@ -975,6 +1158,7 @@ m_ResolvedPackages:
     - 1.9.6
     - 1.9.7
     - 1.9.8
+    - 1.9.9
     compatible:
     - 1.9.2
     - 1.9.4
@@ -982,7 +1166,8 @@ m_ResolvedPackages:
     - 1.9.6
     - 1.9.7
     - 1.9.8
-    recommended: 1.9.8
+    - 1.9.9
+    recommended: 1.9.9
     deprecated:
     - 1.8.0-pre.1
   dependencies:
@@ -2927,6 +3112,258 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
+- packageId: com.unity.render-pipelines.core@14.0.10
+  testable: 0
+  isDirectDependency: 0
+  version: 14.0.10
+  source: 2
+  resolvedPath: C:\Users\jamie\My project\Arcade-basketball\Library\PackageCache\com.unity.render-pipelines.core@14.0.10
+  assetPath: Packages/com.unity.render-pipelines.core
+  name: com.unity.render-pipelines.core
+  displayName: Core RP Library
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: SRP Core makes it easier to create or customize a Scriptable Render
+    Pipeline (SRP). SRP Core contains reusable code, including boilerplate code for
+    working with platform-specific graphics APIs, utility functions for common rendering
+    operations, and  shader libraries. The code in SRP Core is use by the High Definition
+    Render Pipeline (HDRP) and Universal Render Pipeline (URP). If you are creating
+    a custom SRP from scratch or customizing a prebuilt SRP, using SRP Core will
+    save you time.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.1.21
+    - 0.1.27
+    - 0.1.28
+    - 1.0.0-beta
+    - 1.0.1-beta
+    - 1.1.1-preview
+    - 1.1.2-preview
+    - 1.1.4-preview
+    - 1.1.5-preview
+    - 1.1.8-preview
+    - 1.1.10-preview
+    - 1.1.11-preview
+    - 2.0.1-preview
+    - 2.0.3-preview
+    - 2.0.4-preview
+    - 2.0.4-preview.1
+    - 2.0.5-preview
+    - 2.0.6-preview
+    - 2.0.7-preview
+    - 2.0.8-preview
+    - 3.0.0-preview
+    - 3.1.0-preview
+    - 3.3.0-preview
+    - 4.0.0-preview
+    - 4.0.1-preview
+    - 4.1.0-preview
+    - 4.2.0-preview
+    - 4.3.0-preview
+    - 4.6.0-preview
+    - 4.8.0-preview
+    - 4.9.0-preview
+    - 4.10.0-preview
+    - 5.0.0-preview
+    - 5.1.0
+    - 5.2.0
+    - 5.2.1
+    - 5.2.2
+    - 5.2.3
+    - 5.3.1
+    - 5.6.1
+    - 5.7.2
+    - 5.8.2
+    - 5.9.0
+    - 5.10.0
+    - 5.13.0
+    - 5.16.1
+    - 6.5.2
+    - 6.5.3
+    - 6.7.1
+    - 6.9.0
+    - 6.9.1
+    - 6.9.2
+    - 7.0.0
+    - 7.0.1
+    - 7.1.1
+    - 7.1.2
+    - 7.1.5
+    - 7.1.6
+    - 7.1.7
+    - 7.1.8
+    - 7.2.0
+    - 7.2.1
+    - 7.3.1
+    - 7.4.1
+    - 7.4.2
+    - 7.4.3
+    - 7.5.1
+    - 7.5.2
+    - 7.5.3
+    - 7.6.0
+    - 7.7.0
+    - 7.7.1
+    - 8.0.1
+    - 8.1.0
+    - 8.2.0
+    - 8.3.1
+    - 9.0.0-preview.13
+    - 9.0.0-preview.35
+    - 9.0.0-preview.38
+    - 9.0.0-preview.60
+    - 9.0.0-preview.77
+    - 10.0.0-preview.30
+    - 10.1.0
+    - 10.2.0
+    - 10.2.1
+    - 10.2.2
+    - 10.3.1
+    - 10.3.2
+    - 10.4.0
+    - 10.5.0
+    - 10.5.1
+    - 10.6.0
+    - 10.7.0
+    - 10.8.0
+    - 10.8.1
+    - 10.9.0
+    - 10.10.0
+    - 10.10.1
+    - 14.0.10
+    compatible:
+    - 14.0.10
+    recommended: 14.0.10
+    deprecated: []
+  dependencies:
+  - name: com.unity.ugui
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  - name: com.unity.modules.terrain
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.ugui
+    version: 1.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  - name: com.unity.modules.terrain
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 14.0.10
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.unity.searcher@4.9.2
+  testable: 0
+  isDirectDependency: 0
+  version: 4.9.2
+  source: 1
+  resolvedPath: C:\Users\jamie\My project\Arcade-basketball\Library\PackageCache\com.unity.searcher@4.9.2
+  assetPath: Packages/com.unity.searcher
+  name: com.unity.searcher
+  displayName: Searcher
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: General search window for use in the Editor. First target use is for
+    GraphView node search.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 4.0.0-preview
+    - 4.0.0
+    - 4.0.7-preview
+    - 4.0.7
+    - 4.0.8-preview
+    - 4.0.9
+    - 4.1.0-preview
+    - 4.1.0
+    - 4.2.0
+    - 4.3.0
+    - 4.3.1
+    - 4.3.2
+    - 4.6.0-preview
+    - 4.7.0-preview
+    - 4.9.1
+    - 4.9.2
+    - 4.9.3
+    compatible:
+    - 4.9.2
+    - 4.9.3
+    recommended: 4.9.3
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - search
+  - searcher
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637831252240000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.searcher.git
+    revision: 7f9f75b04e97cf09c8ddc3968d059e74d6a2460a
+    path: 
+  unityLifecycle:
+    version: 4.9.2
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
 - packageId: com.unity.ide.visualstudio@2.0.22
   testable: 0
   isDirectDependency: 0
@@ -2974,10 +3411,12 @@ m_ResolvedPackages:
     - 2.0.21
     - 2.0.22
     - 2.0.23
+    - 2.0.25
     compatible:
     - 2.0.22
     - 2.0.23
-    recommended: 2.0.23
+    - 2.0.25
+    recommended: 2.0.25
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3086,14 +3525,19 @@ m_ResolvedPackages:
     - 3.0.34
     - 3.0.35
     - 3.0.36
+    - 3.0.37
+    - 3.0.38
     compatible:
     - 3.0.28
     - 3.0.31
     - 3.0.34
     - 3.0.35
     - 3.0.36
-    recommended: 3.0.36
-    deprecated: []
+    - 3.0.37
+    - 3.0.38
+    recommended: 3.0.38
+    deprecated:
+    - 3.0.37
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -3224,9 +3668,11 @@ m_ResolvedPackages:
     - 0.1.0-preview.1
     - 0.1.0-preview.2
     - 1.0.0
+    - 1.0.1
     compatible:
     - 1.0.0
-    recommended: 1.0.0
+    - 1.0.1
+    recommended: 1.0.1
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -3299,10 +3745,12 @@ m_ResolvedPackages:
     - 1.1.1
     - 1.2.2
     - 1.2.3
+    - 1.2.4
     compatible:
     - 1.2.2
     - 1.2.3
-    recommended: 1.2.3
+    - 1.2.4
+    recommended: 1.2.4
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -3529,10 +3977,12 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.2.5
     - 1.2.6
+    - 1.2.7
     compatible:
     - 1.2.5
     - 1.2.6
-    recommended: 1.2.6
+    - 1.2.7
+    recommended: 1.2.7
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3611,9 +4061,11 @@ m_ResolvedPackages:
     - 2.0.0
     - 2.0.1
     - 2.1.0
+    - 2.1.1
     compatible:
     - 2.0.1
     - 2.1.0
+    - 2.1.1
     recommended: 2.0.1
     deprecated: []
   dependencies: []

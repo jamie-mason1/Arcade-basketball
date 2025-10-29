@@ -21,11 +21,13 @@ public class ShootBall : MonoBehaviour
     [SerializeField] private float stretchDuration = 0.2f; // how fast to squash
     [SerializeField] private float stretchAmount = 0; // stretch after bounce
 
-    public ParticleSystem shotEffect;
-    public ParticleSystem shotEffect2;
+    public ParticleSystem smoke;
+    public ParticleSystem ring;
     private Vector3 originalScale;
     private bool isSquashing = false;
 
+    float originalStartSizeSmoke;
+    float originalStartSizeRing;
 
     [Header("Ball Hold Settings")]
     [SerializeField] Transform holdPoint;
@@ -50,6 +52,14 @@ public class ShootBall : MonoBehaviour
 
     public RepeatForInstatiation copyBall;
     float originalVel;
+
+    private float timeAtFullCharge = 0f;
+    private bool isFullyCharged = false;
+    private bool vibrationStarted = false;
+    private bool MustChargeAgain;
+    private bool CanChargeAgain;
+    private bool isVibrating = false;
+
     void Start()
     {
         if (ChildMesh == null)
@@ -65,9 +75,11 @@ public class ShootBall : MonoBehaviour
                 Debug.LogError("ShootBall: No child mesh with Renderer found!");
             }
         }
-
+        MustChargeAgain = false;
+        CanChargeAgain = true;
         Renderer rend = ChildMesh.GetComponent<Renderer>();
-
+        originalStartSizeSmoke = smoke.startSize;
+        originalStartSizeRing = ring.startSize;
         // Create a unique material instance for this ball
         mat = new Material(rend.material);
         rend.material = mat;  // Assign it back to the Renderer
@@ -125,18 +137,46 @@ public class ShootBall : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space))
             {
-                chargeT += Time.deltaTime * chargeSpeed;
-                chargeT = Mathf.Clamp01(chargeT);
-                copyBall.SetPowerBarAmount(chargeT);
-                charging.Play();
-                shotEffect.transform.position = copyBall.ballSpawnPoint.position;
-                shotEffect2.transform.position = copyBall.ballSpawnPoint.position;
-                shotEffect.transform.position = copyBall.ballSpawnPoint.position + Vector3.up;
-                shotEffect2.transform.position = copyBall.ballSpawnPoint.position + Vector3.up;
-                mat.color = Color.Lerp(originalAlbedo, targetColor, chargeT);
-                if (chargeT >= 1f)
+                if (CanChargeAgain)
                 {
-                    StartCoroutine(VibrateBall(0.8f, 0.0010f, 40f));
+                    if (!isFullyCharged)
+                    {
+                        chargeT += Time.deltaTime * chargeSpeed;
+                        chargeT = Mathf.Clamp01(chargeT);
+                        copyBall.SetPowerBarAmount(chargeT);
+                        charging.Play();
+                        
+                        smoke.transform.position = copyBall.ballSpawnPoint.position + Vector3.up;
+                        ring.transform.position = copyBall.ballSpawnPoint.position + Vector3.up;
+                        mat.color = Color.Lerp(originalAlbedo, targetColor, chargeT);
+                        //smoke.startColor = mat.color;
+                        if (chargeT >= 1f)
+                        {
+                            isFullyCharged = true;
+                            timeAtFullCharge = 0f;
+                        }
+                    }
+                    else
+                    {
+                        timeAtFullCharge += Time.deltaTime;
+
+                        if (timeAtFullCharge > 5f && !vibrationStarted)
+                        {
+                            StartCoroutine(VibrateBall(0.8f, 0.001f, 0.01f, 40f, 20f));
+                            vibrationStarted = true;
+                        }
+                        if (timeAtFullCharge >= 30f)
+                        {
+                            MustChargeAgain = true;
+                            CanChargeAgain = false;
+                            StartCoroutine(DissipateCharge());
+                            isVibrating = false;
+                            
+                        }
+
+                    }
+                    smoke.startSize = originalStartSizeSmoke * chargeT;
+                    ring.startSize = originalStartSizeRing * chargeT;
                 }
 
             }
@@ -144,23 +184,44 @@ public class ShootBall : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 charging.Stop();
-                copyBall.ballsShotOrder.Add(gameObject);
-                rb.isKinematic = false;
-                Vector3 launchVelocity = CalculateLaunchVelocity();
-                rb.AddForce(launchVelocity * rb.mass, ForceMode.Impulse);
-                StartCoroutine(EnableCollider(col, 2f));
-                copyBall.startFillAmount = chargeT;
-                shot.Play();
-                isReadyToShoot = false;
-                chargeT = 0f;
-                if (copyBall.CanStartInstatiation == false)
+                if (MustChargeAgain == false)
                 {
-                    copyBall.CanStartInstatiation = true;
-                    copyBall.shots++;
+                    copyBall.ballsShotOrder.Add(gameObject);
+                    rb.isKinematic = false;
+                    Vector3 launchVelocity = CalculateLaunchVelocity();
+                    rb.AddForce(launchVelocity * rb.mass, ForceMode.Impulse);
+                    StartCoroutine(EnableCollider(col, 2f));
+                    
+                    copyBall.startFillAmount = chargeT;
+                    shot.Play();
+                    isReadyToShoot = false;
+                    chargeT = 0f;
+                    if (copyBall.CanStartInstatiation == false)
+                    {
+                        copyBall.CanStartInstatiation = true;
+                        copyBall.shots++;
+                    }
+                    var smokeMain = smoke.main;
+                    smokeMain.startSize = Mathf.Lerp(0.5f, 2.0f, chargeT);  // Adjust range as needed
+
+                    var ringMain = ring.main;
+                    ringMain.startSize = Mathf.Lerp(originalStartSizeRing, originalStartSizeRing * 3f, chargeT);
+
+                    // Stop previous emissions cleanly before replaying
+                    smoke.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                    ring.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
+                    smoke.Play();
+                    ring.Play();
                 }
-                shotEffect.Play();
-                shotEffect2.Play();
                 mat.color = originalAlbedo;
+                MustChargeAgain = false;
+                CanChargeAgain = true;
+                isVibrating = false;
+                ring.startSize = originalStartSizeRing;
+                smoke.startSize = originalStartSizeSmoke;
+
+
 
             }
 
@@ -188,6 +249,27 @@ public class ShootBall : MonoBehaviour
         }
     }
 
+    private IEnumerator DissipateCharge()
+    {
+        float dissipateDuration = 1.5f; // how long to fade out
+        float elapsed = 0f;
+        float startCharge = chargeT;
+
+        while (elapsed < dissipateDuration)
+        {
+            elapsed += Time.deltaTime;
+            chargeT = Mathf.Lerp(startCharge, 0f, elapsed / dissipateDuration);
+            copyBall.SetPowerBarAmount(chargeT);
+            mat.color = Color.Lerp(targetColor, originalAlbedo, elapsed / dissipateDuration);
+            yield return null;
+        }
+
+        chargeT = 0f;
+        isFullyCharged = false;
+        vibrationStarted = false;
+        timeAtFullCharge = 0f;
+        
+    }
 
     private IEnumerator SquashEffect(float impactForce)
     {
@@ -239,25 +321,40 @@ public class ShootBall : MonoBehaviour
         
         isSquashing = false;
     }
-    private IEnumerator VibrateBall(float duration = 0.2f, float intensity = 0.1f, float frequency = 30f)
+    private IEnumerator VibrateBall(float duration = 0.2f, float startIntensity = 0.05f, float endIntensity = 0.1f, float frequency = 30f, float mt = 5f)
     {
         Vector3 originalPos = ChildMesh.transform.localPosition; // store original position
-        float elapsed = 0f;
-        float interval = 1f / frequency;
+        float vibrationElapsed = 0f;
 
-        while (elapsed < duration)
+        isVibrating = true;
+        while (isVibrating)
         {
-            float offsetX = Random.Range(-intensity, intensity);
-            float offsetY = Random.Range(-intensity, intensity);
-            float offsetZ = Random.Range(-intensity, intensity);
+            float overallT = Mathf.Clamp01(vibrationElapsed / mt);
+            float currentIntensity = Mathf.Lerp(startIntensity, endIntensity, overallT);
 
-            ChildMesh.transform.localPosition = originalPos + new Vector3(offsetX, offsetY, offsetZ);
+            float interval = 1f / frequency;
+            float elapsedPulse = 0f;
 
-            elapsed += interval;
-            yield return new WaitForSeconds(interval);
+            while (elapsedPulse < duration && isVibrating)
+            {
+                float offsetX = Random.Range(-currentIntensity, currentIntensity);
+                float offsetY = Random.Range(-currentIntensity, currentIntensity);
+                float offsetZ = Random.Range(-currentIntensity, currentIntensity);
+
+                ChildMesh.transform.localPosition = originalPos + new Vector3(offsetX, offsetY, offsetZ);
+
+                elapsedPulse += interval;
+                vibrationElapsed += interval;
+                yield return new WaitForSeconds(interval);
+            }
+
+            ChildMesh.transform.localPosition = originalPos;
+
+            yield return null;
         }
+            ChildMesh.transform.localPosition = originalPos; // reset to original
+            vibrationStarted = false;
 
-        ChildMesh.transform.localPosition = originalPos; // reset to original
     }
 }
 
