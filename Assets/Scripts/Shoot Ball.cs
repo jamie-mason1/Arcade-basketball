@@ -6,6 +6,7 @@ public class ShootBall : MonoBehaviour
 {
     Rigidbody rb;
     Material mat;
+    TrailRenderer trail;
     private Color originalAlbedo;
     public Color targetColor = Color.red;
 
@@ -70,6 +71,16 @@ public class ShootBall : MonoBehaviour
 
     void Start()
     {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).GetComponent<TrailRenderer>() != null)
+            {
+                trail = transform.GetChild(i).GetComponent<TrailRenderer>();
+                break;
+            }
+        }
+        trail.gameObject.SetActive(false);
+
         if (ChildMesh == null)
         {
             // Get the first Renderer in children
@@ -228,6 +239,7 @@ public class ShootBall : MonoBehaviour
 
                     smoke.Play();
                     ring.Play();
+                    trail.gameObject.SetActive(true);
                     StartCoroutine(FadeOutEnergyAura(1.5f));
 
                 }
@@ -366,45 +378,54 @@ public class ShootBall : MonoBehaviour
         
         isSquashing = false;
     }
-    private IEnumerator VibrateBall(float duration = 0.2f, float startIntensity = 0.05f, float endIntensity = 0.1f, float frequency = 30f, float mt = 5f)
+    private IEnumerator VibrateBall(
+    float duration = 0.2f,
+    float startIntensity = 0.05f,
+    float endIntensity = 0.1f,
+    float frequency = 30f,
+    float mt = 5f)
     {
-        Vector3 originalPos = ChildMesh.transform.localPosition; // store original position
+        Vector3 originalPos = ChildMesh.transform.localPosition;
         float vibrationElapsed = 0f;
+        float nextPulseTime = 0f;
 
         isVibrating = true;
+
         while (isVibrating)
         {
+            // Increase elapsed time smoothly
+            vibrationElapsed += Time.deltaTime;
+
+            // Smooth intensity increase over mt seconds
             float overallT = Mathf.Clamp01(vibrationElapsed / mt);
             float currentIntensity = Mathf.Lerp(startIntensity, endIntensity, overallT);
 
-            float interval = 1f / frequency;
-            float elapsedPulse = 0f;
+            // Aura ramp
             auraVibrationMultiplier = Mathf.Lerp(0f, vibrationBoost, vibrationElapsed / vibrationRampTime);
 
-            // Update aura with charge + vibration
-
-            while (elapsedPulse < duration && isVibrating)
+            // Frequency timing
+            if (Time.time >= nextPulseTime)
             {
+                // Shake once
                 float offsetX = Random.Range(-currentIntensity, currentIntensity);
                 float offsetY = Random.Range(-currentIntensity, currentIntensity);
                 float offsetZ = Random.Range(-currentIntensity, currentIntensity);
 
                 ChildMesh.transform.localPosition = originalPos + new Vector3(offsetX, offsetY, offsetZ);
 
-                elapsedPulse += interval;
-                vibrationElapsed += interval;
-                yield return new WaitForSeconds(interval);
+                nextPulseTime = Time.time + (1f / frequency);
             }
-            UpdateEnergyAura(auraChargeMultiplier, auraVibrationMultiplier);
 
-            ChildMesh.transform.localPosition = originalPos;
+            UpdateEnergyAura(auraChargeMultiplier, auraVibrationMultiplier);
 
             yield return null;
         }
-            ChildMesh.transform.localPosition = originalPos; // reset to original
-            vibrationStarted = false;
 
+        // Reset
+        ChildMesh.transform.localPosition = originalPos;
+        vibrationStarted = false;
     }
+
 
     private IEnumerator FadeOutEnergyAura(float fadeDuration = 1f)
     {

@@ -7,6 +7,9 @@
       "RelativeMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shoot ball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jamie\\Documents\\ComputerGraphicsContinued\\computerGraphicsAssignment1\\Assets\\Scripts\\SceneControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|C:\\Users\\jamie\\My project\\Arcade-basketball\\assets\\shaders\\wallsshader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{6CEC3E5F-09F9-E1E1-3B95-41F8EB224FF0}|Assembly-CSharp.csproj|solutionrelative:assets\\shaders\\wallsshader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -51,12 +54,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\WallsShader.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jamie\\My project\\Arcade-basketball\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jamie\\My project\\Arcade-basketball\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jamie\\My project\\Arcade-basketball\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -76,7 +75,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Shoot Ball.cs",
               "ToolTip": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\Shoot Ball.cs",
               "RelativeToolTip": "Assets\\Scripts\\Shoot Ball.cs",
-              "ViewState": "AgIAAMUAAAAAAAAAAAAgwNsAAABlAAAAAAAAAA==",
+              "ViewState": "AgIAAOUAAAAAAAAAAADwv+8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-10T13:43:50.795Z",
               "IsPinned": true,
@@ -85,6 +84,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SceneControl.cs",
+              "DocumentMoniker": "C:\\Users\\jamie\\Documents\\ComputerGraphicsContinued\\computerGraphicsAssignment1\\Assets\\Scripts\\SceneControl.cs",
+              "RelativeDocumentMoniker": "..\\..\\Documents\\ComputerGraphicsContinued\\computerGraphicsAssignment1\\Assets\\Scripts\\SceneControl.cs",
+              "ToolTip": "C:\\Users\\jamie\\Documents\\ComputerGraphicsContinued\\computerGraphicsAssignment1\\Assets\\Scripts\\SceneControl.cs",
+              "RelativeToolTip": "..\\..\\Documents\\ComputerGraphicsContinued\\computerGraphicsAssignment1\\Assets\\Scripts\\SceneControl.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T00:35:33.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "WallsShader.shader",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Shaders\\WallsShader.shader",
               "RelativeDocumentMoniker": "Assets\\Shaders\\WallsShader.shader",
@@ -102,25 +114,14 @@
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs",
               "ToolTip": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs",
               "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T15:21:43.578Z"
+              "WhenOpened": "2025-09-10T15:21:43.578Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Image.cs",
-              "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs",
-              "ToolTip": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T15:21:43.578Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "WallsShader.shader",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\WallsShader.shader",
               "RelativeDocumentMoniker": "Assets\\WallsShader.shader",
@@ -132,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Shockwave.shader",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\Shockwave.shader",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Shockwave.shader",
@@ -143,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "BackboardVisualWhip.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\BackboardVisualWhip.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BackboardVisualWhip.cs",
@@ -155,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BackboardShake.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\BackboardShake.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BackboardShake.cs",
@@ -167,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "RimSound.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\RimSound.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RimSound.cs",
@@ -179,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Scored.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\Scored.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scored.cs",
@@ -191,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RepeatForInstatiation.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\RepeatForInstatiation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RepeatForInstatiation.cs",
@@ -203,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DestroyBall.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\DestroyBall.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DestroyBall.cs",
@@ -215,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SpawnBallLocation.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\SpawnBallLocation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnBallLocation.cs",
@@ -227,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BackboardSound.cs",
               "DocumentMoniker": "C:\\Users\\jamie\\My project\\Arcade-basketball\\Assets\\Scripts\\BackboardSound.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BackboardSound.cs",
