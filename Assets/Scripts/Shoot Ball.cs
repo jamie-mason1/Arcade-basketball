@@ -69,8 +69,12 @@ public class ShootBall : MonoBehaviour
     private bool CanChargeAgain;
     private bool isVibrating = false;
 
+    string eventPath = "event:/Shoot";
+    public FmodHandler hand;
+
     void Start()
     {
+        hand = new FmodHandler(eventPath);
         for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).GetComponent<TrailRenderer>() != null)
@@ -219,6 +223,12 @@ public class ShootBall : MonoBehaviour
                     StartCoroutine(EnableCollider(col, 2f));
                     
                     copyBall.startFillAmount = chargeT;
+                    if (hand == null)
+                    {
+                     hand = new FmodHandler(eventPath);
+                    }
+                    hand.setSoundPlayPosition(transform.position);
+                    hand.StartEventSound();
                     shot.Play();
                     isReadyToShoot = false;
                     chargeT = 0f;

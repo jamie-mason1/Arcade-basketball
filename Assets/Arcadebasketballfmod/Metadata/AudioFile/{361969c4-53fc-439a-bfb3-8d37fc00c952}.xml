@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{361969c4-53fc-439a-bfb3-8d37fc00c952}">
+		<property name="assetPath">
+			<value>sci-fi-charge-up-37395.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.2538775510204081</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c79f3aeb-5360-451c-85f8-55c604fbe132}</destination>
+		</relationship>
+	</object>
+</objects>

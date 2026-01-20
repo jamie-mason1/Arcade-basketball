@@ -9,6 +9,8 @@ public class Scored : MonoBehaviour
     [SerializeField] ParticleSystem confetti;
     [SerializeField] private TextMeshProUGUI scoreVal;
     int score;
+    string eventPath = "event:/Score";
+    public FmodHandler hand;
     private void Awake()
     {
         ding = GameObject.Find("Ding").GetComponent<AudioSource>();
@@ -16,6 +18,7 @@ public class Scored : MonoBehaviour
     }
     private void Start()
     {
+        hand = new FmodHandler(eventPath);
         scoreVal.text = "Score: " + score.ToString();
     }
     private void OnTriggerEnter(Collider other)
@@ -26,6 +29,13 @@ public class Scored : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                ding.Play();
+               if (hand == null)
+                {
+                    hand = new FmodHandler(eventPath);
+                    
+                }
+                hand.setSoundPlayPosition(transform.position);
+                hand.StartEventSound();
                 score++;
                 scoreVal.text = "Score: " + score.ToString();
                 if (!confetti.isPlaying)
@@ -38,7 +48,7 @@ public class Scored : MonoBehaviour
     }
     private void Update()
     {
-
+        
     }
 
 }
