@@ -54,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 574
+--- !u!114 &-5136539417263120012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Backboard
+  m_EditorClassIdentifier: 
+  Path: event:/Backboard
+  Guid:
+    Data1: 536270559
+    Data2: 1169870070
+    Data3: 1294288295
+    Data4: -1488405181
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4025
 --- !u!114 &-3298027127652548392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,9 +123,37 @@ MonoBehaviour:
   Path: Assets/Arcadebasketballfmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639045203925227563
+  lastModified: 639052954560966346
   FileSizes: []
   Exists: 1
+--- !u!114 &-355733272680641642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Rim
+  m_EditorClassIdentifier: 
+  Path: event:/Rim
+  Guid:
+    Data1: 1661678205
+    Data2: 1232117534
+    Data3: 431236782
+    Data4: -731380840
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 530157744423715824}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4078
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,13 +174,40 @@ MonoBehaviour:
   - {fileID: -9038483690080869265}
   - {fileID: -8866180765717493601}
   - {fileID: 1102721563029312420}
+  - {fileID: -355733272680641642}
+  - {fileID: 6128880984377717378}
+  - {fileID: -5136539417263120012}
   EditorParameters: []
   MasterBanks:
   - {fileID: -807891107937020971}
   StringsBanks:
   - {fileID: 1230817678581073160}
-  cacheTime: 639045203925248065
+  cacheTime: 639052954560990301
   cacheVersion: 131632
+--- !u!114 &530157744423715824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Rim/Impact
+  m_EditorClassIdentifier: 
+  Name: Impact
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 4201852132
+    data2: 1507986356
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1102721563029312420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,8 +250,35 @@ MonoBehaviour:
   Path: Assets/Arcadebasketballfmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639045203925248065
+  lastModified: 639052954560990301
   FileSizes:
   - Name: 
-    Value: 888
+    Value: 1060
   Exists: 1
+--- !u!114 &6128880984377717378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Explosion
+  m_EditorClassIdentifier: 
+  Path: event:/Explosion
+  Guid:
+    Data1: -725661817
+    Data2: 1172894447
+    Data3: -1767293037
+    Data4: -206026273
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3720

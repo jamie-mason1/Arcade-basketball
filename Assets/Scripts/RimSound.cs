@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class RimSound : MonoBehaviour
 {
-    [SerializeField] AudioSource Rim;
+    FmodHandler Rim;
+
+
 
     private void OnCollisionEnter(Collision collision)
     {
 
         if (collision.collider.CompareTag("Player"))
         {
-            Rim.Play();
+            if(Rim == null)
+            {
+                Rim = new FmodHandler("event:/Rim");
+            }
+            Rim.setSoundPlayPosition(collision.contacts[0].point);
+            Rim.StartEventSound();
         }
 
     }

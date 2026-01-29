@@ -954,8 +954,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confetti: {fileID: 2033237291}
   scoreVal: {fileID: 1232039703}
-  FmodEvent: Score
-  hand: {fileID: 0}
 --- !u!136 &670709726
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1595,7 +1593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde1f749ad295a439a96b6cf1d72e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rim: {fileID: 1182555650}
 --- !u!65 &891865985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24040,7 +24037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde1f749ad295a439a96b6cf1d72e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rim: {fileID: 1182555650}
 --- !u!1 &6616052266828917620
 GameObject:
   m_ObjectHideFlags: 0

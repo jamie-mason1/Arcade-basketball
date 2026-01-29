@@ -6,6 +6,9 @@ public class DestroyBall : MonoBehaviour
 {
     [SerializeField] private ParticleSystem explosion;
     ShootBall shoot;
+    FmodHandler exlposionSound;
+    string eventPath = "event:/Explosion";
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -42,9 +45,16 @@ public class DestroyBall : MonoBehaviour
         if (obj != null) // check in case it was destroyed earlier
         {
             explosion.transform.position = obj.transform.position;
+            
             if (!explosion.isPlaying)
             {
                 explosion.Play();
+                 if (exlposionSound == null)
+                    {
+                     exlposionSound = new FmodHandler(eventPath);
+                    }
+                    exlposionSound.setSoundPlayPosition(obj.transform.position);
+                    exlposionSound.StartEventSound();
             }
             for (int i = shoot.copyBall.ballsShotOrder.Count - 1; i >= 0; i--)
             {

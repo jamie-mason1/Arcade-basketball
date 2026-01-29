@@ -4,7 +4,7 @@ using System.Collections;
 public class BackboardShake : MonoBehaviour
 {
     [SerializeField] private BackboardVisualWhip visualWhip;
-
+    
     void Start()
     {
     }
@@ -15,6 +15,8 @@ public class BackboardShake : MonoBehaviour
         {
             float impactForce = collision.relativeVelocity.magnitude;
             visualWhip?.TriggerWhip(impactForce, collision.contacts[0].point);
+            
+
         }
     }
     

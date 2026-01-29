@@ -64,6 +64,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.23f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ApplicationQuit.cs" />
     <Compile Include="Assets\Scripts\playermovement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\BackboardShake.cs" />
@@ -117,11 +118,13 @@
   <ItemGroup>
     <None Include="Assets\Arcadebasketballfmod\Metadata\SnapshotGroup\{e2e6ce78-97c9-4834-bcc0-cabdf9d9a3dc}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Arcadebasketballfmod\Metadata\Event\{1ff6d6df-ccf6-45ba-a745-254d43bd48a7}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Return\{b768f122-61b5-4d35-8eba-bd6a97fb5568}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Bank\{c01a2975-607c-4e2c-beae-ad7da0a2d78f}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
+    <None Include="Assets\Arcadebasketballfmod\Metadata\ParameterPreset\{c600c17b-d52b-43a1-9cae-fe52e84874f2}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Master.xml" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\BankFolder\{c4bff98d-04f7-408b-8210-1c0a37449ab1}.xml" />
@@ -130,11 +133,13 @@
     <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{a68e4122-a045-41ca-a8a8-6dcc84090b50}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{655bbe2b-15d5-4710-9dc0-d7701628503f}.xml" />
+    <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{cf0830d9-f481-4a08-8d35-c97fa8d8073b}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{361969c4-53fc-439a-bfb3-8d37fc00c952}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Workspace.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\EventFolder\{d5c4eb9e-c368-49de-805c-aabf638becc0}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Tags.xml" />
+    <None Include="Assets\Arcadebasketballfmod\Metadata\Event\{d4bf4787-f2ef-45e8-933f-a996df49b8f3}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Asset\{c79f3aeb-5360-451c-85f8-55c604fbe132}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -150,6 +155,7 @@
     <None Include="Assets\Shaders\WallsShader.shader" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Platform\{d13c9e44-0e48-4d0d-80b2-4a9f22eb565d}.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{379a6b88-e437-4f76-8241-7b38e5534f64}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\ParameterPresetFolder\{3f6ad63f-1773-4484-9404-99d88f39e9f9}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Event\{4985ae8b-8b26-40a3-a27b-b7555e77d859}.xml" />
     <None Include="Assets\Scripts\EnhancedTrailEffect.shader" />
@@ -161,6 +167,8 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Mixer.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{133530c9-0be0-4177-af37-5d9a33ded042}.xml" />
+    <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{bcb079e0-627a-4f72-b4df-2de9dc3a8b27}.xml" />
+    <None Include="Assets\Arcadebasketballfmod\Metadata\Event\{630b327d-9f1e-4970-ae26-b419980368d4}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Event\{2325b87b-dc17-4a60-9264-cc51b3da270b}.xml" />
