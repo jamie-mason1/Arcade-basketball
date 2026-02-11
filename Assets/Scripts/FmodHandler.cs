@@ -119,3 +119,84 @@ public class FmodHandler
         }
     }
 }
+
+public class FmodHandlerWithParameters : FmodHandler
+{
+    private readonly Dictionary<string, (float min, float max)> parameterRanges =
+        new Dictionary<string, (float min, float max)>();
+
+    public FmodHandlerWithParameters(string fmodEvent) : base(fmodEvent) { }
+
+    public FmodHandlerWithParameters(string fmodEvent, bool loops) : base(fmodEvent, loops) { }
+
+    public FmodHandlerWithParameters(FmodHandler other) : base(other) { }
+
+    public FmodHandlerWithParameters(FmodHandlerWithParameters other) : base(other)
+    {
+        foreach (var kvp in other.parameterRanges)
+        {
+            parameterRanges[kvp.Key] = kvp.Value;
+        }
+    }
+
+    public void AddParameter(string name, float min = 0f, float max = 100f)
+    {
+        parameterRanges[name] = (min, max);
+    }
+
+    public void SetDiscreteParameter(string name, int value)
+    {
+        SetParameterValue(name, (float)value);
+    }
+
+    public void SetContinuousParameter(string name, float value)
+    {
+        SetParameterValue(name, value);
+    }
+
+    public void SetLabeledParameter(string name, string label)
+    {
+        if (eventInstance.isValid())
+        {
+            FMOD.RESULT result = eventInstance.setParameterByNameWithLabel(name, label);
+            if (result != FMOD.RESULT.OK)
+                Debug.LogError($"Failed to set labeled parameter {name}: {result}");
+        }
+    }
+
+    public int GetDiscreteParameterValue(string name)
+    {
+        return Mathf.RoundToInt(GetContinuousParameterValue(name));
+    }
+
+    public float GetContinuousParameterValue(string name)
+    {
+        if (eventInstance.isValid())
+        {
+            float value;
+            FMOD.RESULT result = eventInstance.getParameterByName(name, out value);
+            if (result == FMOD.RESULT.OK) return value;
+        }
+        return 0f;
+    }
+
+    private void SetParameterValue(string name, float value)
+    {
+        if (!parameterRanges.TryGetValue(name, out var range)) return;
+
+        value = Mathf.Clamp(value, range.min, range.max);
+
+        if (eventInstance.isValid())
+        {
+            FMOD.RESULT result = eventInstance.setParameterByName(name, value);
+            if (result != FMOD.RESULT.OK)
+                Debug.LogError($"Failed to set parameter {name}: {result}");
+        }
+    }
+
+    public void UpdateParameters(Dictionary<string, float> newValues)
+    {
+        foreach (var kvp in newValues)
+            SetContinuousParameter(kvp.Key, kvp.Value);
+    }
+}

@@ -70,10 +70,18 @@ public class ShootBall : MonoBehaviour
     private bool isVibrating = false;
 
     string eventPath = "event:/Shoot";
+    string eventChargePath = "event:/Charge";
+    string parameterNameCharge = "ChargePitch";
+
+    float chargeValParam = 0;
     public FmodHandler hand;
+    public FmodHandlerWithParameters chargeSoundFmod;
 
     void Start()
     {
+        chargeSoundFmod = new FmodHandlerWithParameters(eventChargePath);
+        chargeSoundFmod.AddParameter(parameterNameCharge, 0f, 1f);
+
         hand = new FmodHandler(eventPath);
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -167,6 +175,13 @@ public class ShootBall : MonoBehaviour
                         chargeT += Time.deltaTime * chargeSpeed;
                         chargeT = Mathf.Clamp01(chargeT);
                         copyBall.SetPowerBarAmount(chargeT);
+                        if(chargeSoundFmod == null){
+                            chargeSoundFmod = new FmodHandlerWithParameters(eventChargePath);
+                            chargeSoundFmod.AddParameter(parameterNameCharge, 0f, 1f);
+                        }
+                        chargeSoundFmod.StartEventSound();
+                        chargeSoundFmod.SetContinuousParameter(parameterNameCharge, chargeT);
+
 
                         auraChargeMultiplier = chargeT; // set aura based on charge
                         UpdateEnergyAura(auraChargeMultiplier, auraVibrationMultiplier);
@@ -214,6 +229,12 @@ public class ShootBall : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 charging.Stop();
+                if(chargeSoundFmod == null){
+                    chargeSoundFmod = new FmodHandlerWithParameters(eventChargePath);
+                    chargeSoundFmod.AddParameter(parameterNameCharge, 0f, 1f);
+                }
+                    chargeSoundFmod.EndSoundInstance();
+                    chargeSoundFmod.SetContinuousParameter(parameterNameCharge, 0);
                 if (MustChargeAgain == false)
                 {
                     copyBall.ballsShotOrder.Add(gameObject);

@@ -22,11 +22,13 @@ MonoBehaviour:
   - {fileID: -807891107937020971}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5379591232035941505}
+  - {fileID: 2612579197357135403}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1253
+  Length: 8000
 --- !u!114 &-8866180765717493601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +83,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4025
+--- !u!114 &-4442778631153319335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gameover Sound
+  m_EditorClassIdentifier: 
+  Path: event:/Gameover Sound
+  Guid:
+    Data1: -1403553386
+    Data2: 1300560541
+    Data3: 199565245
+    Data4: -1189437597
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1056
 --- !u!114 &-3298027127652548392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +137,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 731
+--- !u!114 &-1270678721647966682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/In Game Background music
+  m_EditorClassIdentifier: 
+  Path: event:/In Game Background music
+  Guid:
+    Data1: 2054193279
+    Data2: 1172196315
+    Data3: 500430740
+    Data4: -1073110577
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 162507
 --- !u!114 &-807891107937020971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +179,7 @@ MonoBehaviour:
   Path: Assets/Arcadebasketballfmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639052954560966346
+  lastModified: 639064251220879354
   FileSizes: []
   Exists: 1
 --- !u!114 &-355733272680641642
@@ -177,12 +233,15 @@ MonoBehaviour:
   - {fileID: -355733272680641642}
   - {fileID: 6128880984377717378}
   - {fileID: -5136539417263120012}
+  - {fileID: -1270678721647966682}
+  - {fileID: -4442778631153319335}
+  - {fileID: 6753071626729948097}
   EditorParameters: []
   MasterBanks:
   - {fileID: -807891107937020971}
   StringsBanks:
   - {fileID: 1230817678581073160}
-  cacheTime: 639052954560990301
+  cacheTime: 639064251220904327
   cacheVersion: 131632
 --- !u!114 &530157744423715824
 MonoBehaviour:
@@ -229,12 +288,13 @@ MonoBehaviour:
   Banks:
   - {fileID: -807891107937020971}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 7482927455832221938}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1044
+  Length: 1224
 --- !u!114 &1230817678581073160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,10 +310,58 @@ MonoBehaviour:
   Path: Assets/Arcadebasketballfmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639052954560990301
+  lastModified: 639064251220904327
   FileSizes:
   - Name: 
-    Value: 1060
+    Value: 1310
+  Exists: 1
+--- !u!114 &2612579197357135403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Charge/ChargePitch
+  m_EditorClassIdentifier: 
+  Name: ChargePitch
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4157173780
+    data2: 2293809287
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &5379591232035941505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Charge/Impact
+  m_EditorClassIdentifier: 
+  Name: Impact
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 1
+  ID:
+    data1: 4201852132
+    data2: 1507986356
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &6128880984377717378
 MonoBehaviour:
@@ -282,3 +390,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3720
+--- !u!114 &6753071626729948097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu Background Music
+  m_EditorClassIdentifier: 
+  Path: event:/Menu Background Music
+  Guid:
+    Data1: 565963507
+    Data2: 1332977925
+    Data3: -608313673
+    Data4: -755434878
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 65433
+--- !u!114 &7482927455832221938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bounce/BounceImpact
+  m_EditorClassIdentifier: 
+  Name: BounceImpact
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1732823761
+    data2: 3670495690
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1

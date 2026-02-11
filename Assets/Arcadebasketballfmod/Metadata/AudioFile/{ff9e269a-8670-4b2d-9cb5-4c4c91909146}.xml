@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ff9e269a-8670-4b2d-9cb5-4c4c91909146}">
+		<property name="assetPath">
+			<value>vasilyatsevich-the-game-begins-epic-sci-fi-action-intro-221133.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>65.933061224489791</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c79f3aeb-5360-451c-85f8-55c604fbe132}</destination>
+		</relationship>
+	</object>
+</objects>

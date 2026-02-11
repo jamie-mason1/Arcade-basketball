@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 58ac08150e13bf24b9e0a733c50abdb6
+  - enabled: 1
     path: Assets/Scenes/Freeroam.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/MovingBasket.unity
+    guid: 41ebd80fddfc22146aa4f9d6d77b724e
   m_configObjects: {}

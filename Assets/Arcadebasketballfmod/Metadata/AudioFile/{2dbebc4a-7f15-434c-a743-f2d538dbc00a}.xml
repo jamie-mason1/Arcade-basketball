@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2dbebc4a-7f15-434c-a743-f2d538dbc00a}">
+		<property name="assetPath">
+			<value>psychronic-let-the-games-begin-21858.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>162.50775510204082</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c79f3aeb-5360-451c-85f8-55c604fbe132}</destination>
+		</relationship>
+	</object>
+</objects>
