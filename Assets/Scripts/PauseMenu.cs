@@ -1,0 +1,68 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PauseMenu : MonoBehaviour
+{
+    public static bool GameIsPaused = false;
+
+    public GameObject pauseMenuUI;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+        if (GameIsPaused)
+        {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                LoadMenu();
+            }
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                QuitGame();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 4f;
+        GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+        Cursor.lockState = CursorLockMode.None; // unlock cursor
+        Cursor.visible = true;     
+    }
+
+    public void LoadMenu()
+
+    {
+        Time.timeScale = 4f;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
+}

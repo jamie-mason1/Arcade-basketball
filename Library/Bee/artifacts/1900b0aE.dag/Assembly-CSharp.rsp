@@ -381,6 +381,7 @@
 "Assets/Scripts/Mainmenu.cs"
 "Assets/Scripts/MenuMusic.cs"
 "Assets/Scripts/NetSoftBody.cs"
+"Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/PlayerCamera.cs"
 "Assets/Scripts/playermovement.cs"
 "Assets/Scripts/RepeatForInstatiation.cs"
