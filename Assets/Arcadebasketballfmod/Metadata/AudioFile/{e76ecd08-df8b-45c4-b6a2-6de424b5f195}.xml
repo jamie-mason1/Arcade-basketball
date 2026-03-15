@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e76ecd08-df8b-45c4-b6a2-6de424b5f195}">
+		<property name="assetPath">
+			<value>musheran-beep-313342.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.192</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c79f3aeb-5360-451c-85f8-55c604fbe132}</destination>
+		</relationship>
+	</object>
+</objects>
