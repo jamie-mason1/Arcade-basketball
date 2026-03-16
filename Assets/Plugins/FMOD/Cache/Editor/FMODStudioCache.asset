@@ -56,6 +56,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 574
+--- !u!114 &-7847138066957458756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UIHighlight
+  m_EditorClassIdentifier: 
+  Path: event:/UIHighlight
+  Guid:
+    Data1: -1913011607
+    Data2: 1099414530
+    Data3: 421683370
+    Data4: -1359448085
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 192
 --- !u!114 &-5136539417263120012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +191,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 162507
+--- !u!114 &-1195960632330041998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pause
+  m_EditorClassIdentifier: 
+  Path: event:/Pause
+  Guid:
+    Data1: 660140619
+    Data2: 1248007731
+    Data3: 418246571
+    Data4: 1775316611
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 496
 --- !u!114 &-807891107937020971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +233,7 @@ MonoBehaviour:
   Path: Assets/Arcadebasketballfmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639064251220879354
+  lastModified: 639092008569419214
   FileSizes: []
   Exists: 1
 --- !u!114 &-355733272680641642
@@ -210,6 +264,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4078
+--- !u!114 &-307018969243792491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ClickButton
+  m_EditorClassIdentifier: 
+  Path: event:/ClickButton
+  Guid:
+    Data1: -1640158690
+    Data2: 1176294819
+    Data3: 1520324743
+    Data4: 1006495438
+  Banks:
+  - {fileID: -807891107937020971}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 888
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,12 +317,15 @@ MonoBehaviour:
   - {fileID: -1270678721647966682}
   - {fileID: -4442778631153319335}
   - {fileID: 6753071626729948097}
+  - {fileID: -307018969243792491}
+  - {fileID: -1195960632330041998}
+  - {fileID: -7847138066957458756}
   EditorParameters: []
   MasterBanks:
   - {fileID: -807891107937020971}
   StringsBanks:
   - {fileID: 1230817678581073160}
-  cacheTime: 639064251220904327
+  cacheTime: 639092008569439461
   cacheVersion: 131632
 --- !u!114 &530157744423715824
 MonoBehaviour:
@@ -310,10 +394,10 @@ MonoBehaviour:
   Path: Assets/Arcadebasketballfmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639064251220904327
+  lastModified: 639092008569439461
   FileSizes:
   - Name: 
-    Value: 1310
+    Value: 1440
   Exists: 1
 --- !u!114 &2612579197357135403
 MonoBehaviour:

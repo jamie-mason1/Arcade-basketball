@@ -391,6 +391,7 @@
 "Assets/Scripts/Scored.cs"
 "Assets/Scripts/Shoot Ball.cs"
 "Assets/Scripts/SpawnBallLocation.cs"
+"Assets/Scripts/UIButtonHighlightDetector.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
