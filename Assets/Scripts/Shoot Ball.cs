@@ -10,6 +10,8 @@ public class ShootBall : MonoBehaviour
     private Color originalAlbedo;
     public Color targetColor = Color.red;
 
+    public GameObject Instructions;
+
 
     bool isReadyToShoot;
     [SerializeField]Transform hoopPosition;
@@ -168,6 +170,10 @@ public class ShootBall : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space))
             {
+                if (Instructions.activeSelf)
+                {
+                    Instructions.SetActive(false);
+                }
                 if (CanChargeAgain)
                 {
                     if (!isFullyCharged)

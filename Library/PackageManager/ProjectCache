@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638969159995331061
-    m_Hash: 308386496
+      ticks: 639095638736081818
+    m_Hash: 258915448
   m_LockFileStatus:
     m_FilePath: C:/Users/jamie/My project/Arcade-basketball/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638969159995401829
-    m_Hash: 1960709526
+      ticks: 639095638736240324
+    m_Hash: 651001159
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -117,6 +117,8 @@ m_ResolvedPackages:
     - 2.10.3
     - 2.10.4
     - 2.10.5
+    - 2.10.6
+    - 2.10.7
     - 3.0.0-pre.3
     - 3.0.0-pre.4
     - 3.0.0-pre.5
@@ -131,6 +133,7 @@ m_ResolvedPackages:
     - 3.1.3
     - 3.1.4
     - 3.1.5
+    - 3.1.6
     compatible:
     - 2.9.5
     - 2.9.7
@@ -140,6 +143,8 @@ m_ResolvedPackages:
     - 2.10.3
     - 2.10.4
     - 2.10.5
+    - 2.10.6
+    - 2.10.7
     - 3.0.0-pre.3
     - 3.0.0-pre.4
     - 3.0.0-pre.5
@@ -154,6 +159,7 @@ m_ResolvedPackages:
     - 3.1.3
     - 3.1.4
     - 3.1.5
+    - 3.1.6
     recommended: 2.9.7
     deprecated: []
   dependencies:
@@ -322,6 +328,12 @@ m_ResolvedPackages:
     - 2.9.2
     - 2.9.3
     - 2.10.0
+    - 2.10.1
+    - 2.10.2
+    - 2.11.2
+    - 2.11.3
+    - 2.11.4
+    - 2.12.4
     compatible:
     - 2.3.1
     - 2.4.3
@@ -336,6 +348,12 @@ m_ResolvedPackages:
     - 2.9.2
     - 2.9.3
     - 2.10.0
+    - 2.10.1
+    - 2.10.2
+    - 2.11.2
+    - 2.11.3
+    - 2.11.4
+    - 2.12.4
     recommended: 2.3.1
     deprecated: []
   dependencies: []
@@ -468,6 +486,111 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.0.1
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+- packageId: com.unity.postprocessing@3.4.0
+  testable: 0
+  isDirectDependency: 1
+  version: 3.4.0
+  source: 1
+  resolvedPath: C:\Users\jamie\My project\Arcade-basketball\Library\PackageCache\com.unity.postprocessing@3.4.0
+  assetPath: Packages/com.unity.postprocessing
+  name: com.unity.postprocessing
+  displayName: Post Processing
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: assets
+  description: The post-processing stack (v2) comes with a collection of effects
+    and image filters you can apply to your cameras to improve the visuals of your
+    games.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 0.1.7
+    - 0.1.8
+    - 2.0.0-beta
+    - 2.0.1-beta
+    - 2.0.2-preview
+    - 2.0.3-preview
+    - 2.0.5-preview
+    - 2.0.7-preview
+    - 2.0.8-preview
+    - 2.0.9-preview
+    - 2.0.10-preview
+    - 2.0.11-preview
+    - 2.0.12-preview
+    - 2.0.13-preview
+    - 2.0.14-preview
+    - 2.0.15-preview
+    - 2.0.16-preview
+    - 2.0.17-preview
+    - 2.1.0
+    - 2.1.1
+    - 2.1.2
+    - 2.1.3
+    - 2.1.4
+    - 2.1.5
+    - 2.1.6
+    - 2.1.7
+    - 2.2.1
+    - 2.2.2
+    - 2.3.0
+    - 3.0.1
+    - 3.0.3
+    - 3.1.0
+    - 3.1.1
+    - 3.2.0
+    - 3.2.1
+    - 3.2.2
+    - 3.3.0
+    - 3.4.0
+    - 3.5.0
+    - 3.5.1
+    - 3.5.3
+    - 3.5.4
+    compatible:
+    - 3.4.0
+    - 3.5.0
+    - 3.5.1
+    - 3.5.3
+    - 3.5.4
+    recommended: 3.4.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.physics
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638384897060000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.postprocessing@3.4/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/Unity-Technologies/Graphics.git
+    revision: 54427d2529ad1a9e8f31c693d751c6371f914e40
+    path: 
+  unityLifecycle:
+    version: 3.4.0
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -785,6 +908,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.12
     - 3.2.0-pre.13
     - 3.2.0-pre.14
+    - 3.2.0-pre.15
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -806,6 +930,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.12
     - 3.2.0-pre.13
     - 3.2.0-pre.14
+    - 3.2.0-pre.15
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.9
@@ -962,6 +1087,8 @@ m_ResolvedPackages:
     - 1.8.7
     - 1.8.8
     - 1.8.9
+    - 1.8.10
+    - 1.8.11
     compatible:
     - 1.7.6
     - 1.7.7
@@ -975,6 +1102,8 @@ m_ResolvedPackages:
     - 1.8.7
     - 1.8.8
     - 1.8.9
+    - 1.8.10
+    - 1.8.11
     recommended: 1.7.7
     deprecated: []
   dependencies:
@@ -1159,6 +1288,8 @@ m_ResolvedPackages:
     - 1.9.7
     - 1.9.8
     - 1.9.9
+    - 1.9.10
+    - 1.9.11
     compatible:
     - 1.9.2
     - 1.9.4
@@ -1167,7 +1298,9 @@ m_ResolvedPackages:
     - 1.9.7
     - 1.9.8
     - 1.9.9
-    recommended: 1.9.9
+    - 1.9.10
+    - 1.9.11
+    recommended: 1.9.11
     deprecated:
     - 1.8.0-pre.1
   dependencies:
@@ -3328,10 +3461,12 @@ m_ResolvedPackages:
     - 4.9.1
     - 4.9.2
     - 4.9.3
+    - 4.9.4
     compatible:
     - 4.9.2
     - 4.9.3
-    recommended: 4.9.3
+    - 4.9.4
+    recommended: 4.9.4
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -3412,11 +3547,15 @@ m_ResolvedPackages:
     - 2.0.22
     - 2.0.23
     - 2.0.25
+    - 2.0.26
+    - 2.0.27
     compatible:
     - 2.0.22
     - 2.0.23
     - 2.0.25
-    recommended: 2.0.25
+    - 2.0.26
+    - 2.0.27
+    recommended: 2.0.27
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3527,6 +3666,7 @@ m_ResolvedPackages:
     - 3.0.36
     - 3.0.37
     - 3.0.38
+    - 3.0.39
     compatible:
     - 3.0.28
     - 3.0.31
@@ -3535,7 +3675,8 @@ m_ResolvedPackages:
     - 3.0.36
     - 3.0.37
     - 3.0.38
-    recommended: 3.0.38
+    - 3.0.39
+    recommended: 3.0.39
     deprecated:
     - 3.0.37
   dependencies:
@@ -3746,10 +3887,18 @@ m_ResolvedPackages:
     - 1.2.2
     - 1.2.3
     - 1.2.4
+    - 1.3.0
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
     compatible:
     - 1.2.2
     - 1.2.3
     - 1.2.4
+    - 1.3.0
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
     recommended: 1.2.4
     deprecated: []
   dependencies: []
@@ -3978,10 +4127,12 @@ m_ResolvedPackages:
     - 1.2.5
     - 1.2.6
     - 1.2.7
+    - 1.3.0
     compatible:
     - 1.2.5
     - 1.2.6
     - 1.2.7
+    - 1.3.0
     recommended: 1.2.7
     deprecated: []
   dependencies:
