@@ -78,6 +78,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Scripts\TurnColliderToTrigger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Mainmenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\Scripts\RedirectionScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\RepeatForInstatiation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -153,7 +155,9 @@
     <None Include="Assets\Arcadebasketballfmod\Metadata\AudioFile\{ff9e269a-8670-4b2d-9cb5-4c4c91909146}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\EventFolder\{d5c4eb9e-c368-49de-805c-aabf638becc0}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Event\{7a70807f-4bdb-45de-94f7-d31dcfa109c0}.xml" />
+    <None Include="Assets\press_start_2p\FONTLOG.txt" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Tags.xml" />
+    <None Include="Assets\press_start_2p\LICENSE.txt" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Event\{d4bf4787-f2ef-45e8-933f-a996df49b8f3}.xml" />
     <None Include="Assets\Arcadebasketballfmod\Metadata\Asset\{c79f3aeb-5360-451c-85f8-55c604fbe132}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />

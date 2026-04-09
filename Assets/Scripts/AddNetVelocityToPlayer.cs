@@ -29,7 +29,7 @@ public class AddNetVelocityToPlayer : MonoBehaviour
         if (playerRb != null && rb != null)
         {
             // Add this object's velocity to the player
-            playerRb.velocity += rb.velocity;
+            //playerRb.velocity += rb.velocity;
         }
 
     }

@@ -49,7 +49,7 @@ public class Scored : MonoBehaviour
 
                 score++;
                 scoreVal.text = "Score: " + score.ToString();
-
+                other.GetComponent<Rigidbody>().AddForce(Vector3.down,ForceMode.Impulse);
                 if (!confetti.isPlaying)
                 {
                     confetti.Play();
