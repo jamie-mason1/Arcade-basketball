@@ -26,6 +26,7 @@ public class RepeatForInstatiation : MonoBehaviour
     public float startFillAmount;
     public List<GameObject> ballsShotOrder = new List<GameObject>();
     bool gameover;
+    public GameOver gameOverScript;
 
     private void Awake()
     {
@@ -45,6 +46,8 @@ public class RepeatForInstatiation : MonoBehaviour
         numShots.text = "Shots: " + shots.ToString();
         timer.text = "Time : " + time;
         gameover = false;
+        Time.timeScale = 4f;
+
     }
     // Update is called once per frame
     void Update()
@@ -78,13 +81,20 @@ public class RepeatForInstatiation : MonoBehaviour
             int seconds = Mathf.FloorToInt(cur % 60);
             string time = string.Format("{0:00}:{1:00}", minutes, seconds);
             timer.text = "Time : " + time;
+            gameover = false;
 
 
         }
         else
         {
-            gameover = false;
+            gameover = true;
         }
+        if (gameover)
+        {
+            if(gameOverScript != null){
+                gameOverScript.SetGameOverConditions();
+            }
+        } 
     }
     public void SetPowerBarAmount(float charge)
     {
