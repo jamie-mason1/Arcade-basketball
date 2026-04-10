@@ -126,10 +126,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -319,17 +317,17 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
+    fullTypeName: GameOver
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
+    fullTypeName: GameOver
+    methodName: ChangeScene
+  - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: LoadMenu
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Resume
-  - assembly: Assembly-CSharp
-    fullTypeName: GameOver
-    methodName: ChangeScene
-  - assembly: Assembly-CSharp
-    fullTypeName: GameOver
-    methodName: ChangeScene
   - assembly: Assembly-CSharp
     fullTypeName: GameOver
     methodName: ChangeScene
