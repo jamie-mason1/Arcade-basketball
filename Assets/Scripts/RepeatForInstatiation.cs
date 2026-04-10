@@ -31,6 +31,14 @@ public class RepeatForInstatiation : MonoBehaviour
     private void Awake()
     {
         orginalReferenceHeight = OriginalBall.transform.position.y;
+        int minutes = Mathf.FloorToInt(maxTime / 60);
+        int seconds = Mathf.FloorToInt(maxTime % 60);
+        string time = string.Format("{0:00}:{1:00}", minutes, seconds);
+        cur = maxTime;
+        gameover = false;
+        timer.text = "Time : " + time;
+
+
     }
 
     private void Start()
@@ -39,12 +47,7 @@ public class RepeatForInstatiation : MonoBehaviour
         Instantiate(OriginalBall);
         OriginalBall.SetActive(false);
         shots = 0;
-        int minutes = Mathf.FloorToInt(maxTime / 60);
-        int seconds = Mathf.FloorToInt(maxTime % 60);
-        cur = maxTime;
-        string time = string.Format("{0:00}:{1:00}", minutes, seconds);
         numShots.text = "Shots: " + shots.ToString();
-        timer.text = "Time : " + time;
         gameover = false;
         Time.timeScale = 4f;
 
@@ -88,13 +91,11 @@ public class RepeatForInstatiation : MonoBehaviour
         else
         {
             gameover = true;
-        }
-        if (gameover)
-        {
             if(gameOverScript != null){
                 gameOverScript.SetGameOverConditions();
             }
-        } 
+        }
+        
     }
     public void SetPowerBarAmount(float charge)
     {

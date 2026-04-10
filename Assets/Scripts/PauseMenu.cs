@@ -22,18 +22,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-        if (GameIsPaused)
-        {
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                LoadMenu();
-            }
-
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                QuitGame();
-            }
-        }
+        
     }
 
     public void Resume()
@@ -60,9 +49,5 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void QuitGame()
-    {
-        Debug.Log("Quitting game...");
-        Application.Quit();
-    }
+    
 }
